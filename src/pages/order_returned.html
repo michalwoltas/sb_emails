@@ -1,0 +1,77 @@
+---
+layout: raw_sb
+---
+
+{{> sb_subemail_header}}
+{{{{raw}}}}{% block body %}{{{{/raw}}}}
+
+<table cellpadding="0" cellspacing="0" width="100%" >
+    <tr>
+        <td class="padding-base-h">
+            {{> sb_user}}
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-size: 16px; text-align: left;" align="left">
+                        {{{{raw}}}}
+                        {% trans 'Your order has been successfully returned to' %}
+                        Amazon.com
+                        {% trans 'and you will receive a refund of' %}
+                        {{ totals.total_taxed|format_currency:locale_code }} {% trans 'immediately' %}.
+                        {{{{/raw}}}}
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-size: 16px; text-align: left;" align="left">
+                        {{{{raw}}}}
+                        {% blocktrans %}
+                        Please note that it may take between 3-5 working days for the refund to appear on your statement.
+                        {% endblocktrans %}
+                        {{{{/raw}}}}
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-size: 16px; text-align: left;" align="left">
+                        {{{{raw}}}}
+                        {% trans 'We hope to see you again soon' %},
+                        {{{{/raw}}}}
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-size: 16px; text-align: left;" align="left">
+                        {{{{raw}}}}
+                        {% trans 'SmartBuy' %}
+                        {{{{/raw}}}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{{{raw}}}}{% endblock %}{{{{/raw}}}}

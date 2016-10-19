@@ -1,0 +1,136 @@
+{% extends 'smartbuy_api/emails/base.html' %}
+{% load i18n sb_filters %}
+
+{% block body %}
+<table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+        <td class="padding-base-h" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-left: 40px !important; padding-right: 40px !important; text-align: left; vertical-align: top; word-wrap: break-word">
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'Hi' %} <span style="font-weight: bold">{{ user }}</span>,
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            Your SmartBuy account is now open. You can now take advanatage of the best prices and offers on hundreds of your favorite everyday products from around the web.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <a href="#" class="link" style="color: #ffffff !important; font-size: 16px !important; text-decoration: none !important">
+                <table cellspacing="0" cellpadding="0" width="100%" class="button" style="background-color: #3881bf !important; border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; padding-bottom: 12px !important; padding-top: 12px !important; text-align: center !important; vertical-align: top; width: 100% !important">
+                    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                        <td align="center" width="100%" class="button link" style="-moz-hyphens: auto; -webkit-hyphens: auto; background-color: #3881bf !important; border-collapse: collapse !important; color: #ffffff !important; font-size: 16px !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 12px !important; padding-top: 12px !important; text-align: center !important; vertical-align: top; width: 100% !important; word-wrap: break-word">
+                            <a href="#" class="link" style="color: #ffffff !important; font-size: 16px !important; text-decoration: none !important">
+                                {% trans 'View My Account' %}
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </a>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'With SmartBuy, you’ll get' %}:
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th style="text-align: left" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'The Best Prices, Guaranteed' %}
+                        </p>
+                    </th>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non dui et odio elementum malesuada. Quisque viverra augue eu libero pellentesque consequat.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="60px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 60px; hyphens: auto; line-height: 60px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th style="text-align: left" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'Exclusive Savings & Discounts' %}
+                        </p>
+                    </th>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non dui et odio elementum malesuada. Quisque viverra augue eu libero pellentesque consequat.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="60px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 60px; hyphens: auto; line-height: 60px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th style="text-align: left" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'One Account, One Click' %}
+                        </p>
+                    </th>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non dui et odio elementum malesuada. Quisque viverra augue eu libero pellentesque consequat.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

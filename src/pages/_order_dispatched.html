@@ -1,0 +1,69 @@
+---
+layout: raw_empty
+---
+{{> sb_subemail_header}}
+{{{{raw}}}}{% block body %}{{{{/raw}}}}
+
+<table cellpadding="0" cellspacing="0" width="100%" >
+    <tr>
+        <td class="padding-base-h">
+            {{> sb_user}}
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-size: 16px; text-align: left;" align="left">
+                        <p class="font-base">{{{{raw}}}}{% trans 'We just wanted to let you know that the following items have been dispatched' %}{{{{/raw}}}}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+            </table>
+
+            {{> sb_order_no}}
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="10px" style="font-size:10px;line-height:10px;">&nbsp;</td></tr>
+            </table>
+            <!-- PRODUCT -->
+            <!-- FOR ... IN -->
+            {{> sb_product}}
+            <!-- END FOR -->
+            <!-- END PRODUCT -->
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="45px" style="font-size:45px;line-height:45px;">&nbsp;</td></tr>
+            </table>
+
+            {{> sb_delivery_address}}
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="60px" style="font-size:60px;line-height:60px;">&nbsp;</td></tr>
+            </table>
+
+            <a href="#" class="link">
+                <table cellspacing="0" cellpadding="0" width="100%" class="button">
+                    <tr>
+                        <td align="center" width="100%" class="button link">
+                            <a href="#" class="link">
+                                {{{{raw}}}}{% trans 'Track Order' %}{{{{/raw}}}}
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </a>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%">
+                <tr><td height="60px" style="font-size:60px;line-height:60px;">&nbsp;</td></tr>
+            </table>
+
+            {{> sb_order_foot}}
+        </td>
+    </tr>
+</table>
+
+{{{{raw}}}}{% endblock %}{{{{/raw}}}}

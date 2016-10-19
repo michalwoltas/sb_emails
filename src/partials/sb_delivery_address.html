@@ -1,0 +1,29 @@
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <th align="left" style="text-align: left; padding-top: 8px; padding-bottom: 8px;">
+            <p class="font-medium">{{{{raw}}}}{% trans 'Delivery Address' %}{{{{/raw}}}}</p>
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align: left;" align="left">
+            <p class="font-medium">{{{{raw}}}}{{ delivery_address.to_html }}{{{{/raw}}}}</p>
+        </td>
+    </tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="100%" class="spacer">
+    <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <th align="left" style="text-align: left; padding-top: 8px; padding-bottom: 8px;">
+            <p class="font-medium">{{{{raw}}}}{% trans 'Payment Method' %}{{{{/raw}}}}</p>
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align: left;" align="left">
+            <p class="font-medium">{{{{raw}}}}{{ payment_details.to_html }}{{{{/raw}}}}</p>
+        </td>
+    </tr>
+</table>

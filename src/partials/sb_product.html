@@ -1,0 +1,116 @@
+{% for item in basket_items %}
+    <table cellpadding="0" cellspacing="0" width="100%" >
+        <tr>
+            <td height="25px" style="font-size:25px;line-height:25px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="middle" style="width: 105px; text-align: left;" align="left">
+                <img src="{{{{raw}}}}{{ item.image_src }}{{{{/raw}}}}" alt="{{{{raw}}}}{{ item.name }}{{{{/raw}}}}">
+            </td>
+            <td style="padding-left: 20px;">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td style="text-align: left;" align="left">
+                            <p class="font-base">{{{{raw}}}}{{ item.name }}{{{{/raw}}}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="5px" style="font-size:5px;line-height:5px;">&nbsp;</td>
+                    </tr>
+                    <!--<tr>
+                        <td style="font-size: 13px; color: #7f8489; text-align: left;" align="left">
+                            Aranciata Rossa / Blood Orange Sparkling Fruit Beverages
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <td height="20px" style="font-size:20px;line-height:20px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;" align="left">
+                            <p class="font-small font-faded">
+                            {{{{raw}}}}
+                                {% trans 'Qty' %}: {{ item.quantity }}&nbsp;|&nbsp;{{ item.price_taxed|format_currency:locale_code }}
+                            {{{{/raw}}}}
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="25px" style="font-size:25px;line-height:25px;">&nbsp;</td>
+        </tr>
+    </table>
+{% endfor %}
+
+<table cellspacing="0" cellpadding="0" width="100%" class="spacer">
+    <tr><td height="25px" style="font-size:25px;line-height:25px;">&nbsp;</td></tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td align="left" style="text-align: left; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{% trans 'Subtotal' %}{{{{/raw}}}}</p>
+        </td>
+        <td align="right" style="text-align: right; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{{ totals.items_taxed|format_currency:locale_code }}{{{{/raw}}}}</p>
+        </td>
+    </tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td align="left" style="text-align: left; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{% trans 'Standard Delivery' %}{{{{/raw}}}}</p>
+        </td>
+        <td align="right" style="text-align: right; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{{ totals.delivery_taxed|format_currency:locale_code }}{{{{/raw}}}}</p>
+        </td>
+    </tr>
+</table>
+
+<!--<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td align="left" style="text-align: left; padding-top: 20px; padding-bottom: 20px; font-size: 14px;">
+            {{{{raw}}}}
+                {% trans 'Taxes' %}
+            {{{{/raw}}}}
+        </td>
+        <td align="right" style="text-align: right; padding-top: 20px; padding-bottom: 20px; font-size: 14px;">
+            {{{{raw}}}}
+                $0.00
+            {{{{/raw}}}}
+        </td>
+    </tr>
+</table>-->
+
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <th align="left" style="text-align: left; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{% trans 'Total' %}{{{{/raw}}}}</p>
+        </th>
+        <th align="right" style="text-align: right; padding-top: 20px; padding-bottom: 20px;">
+            <p class="font-medium">{{{{raw}}}}{{ totals.total_taxed|format_currency:locale_code }}{{{{/raw}}}}</p>
+        </th>
+    </tr>
+</table>
+
+<!--<table cellspacing="0" cellpadding="0" width="100%" class="spacer">
+    <tr><td height="30px" style="font-size:30px;line-height:30px;">&nbsp;</td></tr>
+</table>-->
+<!--
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td align="left" style="text-align: left;">
+            <img src="">
+        </td>
+        <td align="right" valign="middle" style="text-align: right; font-size: 13px; vertical-align: middle;">
+            {{{{raw}}}}
+                {% trans 'This order is provided and fulfilled by' %}
+                Amazon.com
+            {{{{/raw}}}}
+        </td>
+    </tr>
+</table>
+-->

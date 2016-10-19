@@ -1,0 +1,230 @@
+{% extends 'smartbuy_api/emails/base.html' %}
+{% load i18n sb_filters %}
+
+{% block body %}
+<table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+        <td class="padding-base-h" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-left: 40px !important; padding-right: 40px !important; text-align: left; vertical-align: top; word-wrap: break-word">
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% trans 'Hi' %} <span style="font-weight: bold">{{ user }}</span>,
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            Thanks for ordering with SmartBuy. We are currently placing your order with the retailers. We’ll let you know as soon as it’s confirmed.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="60px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 60px; hyphens: auto; line-height: 60px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Order' %}: #{{ order_no }}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="10px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 10px; hyphens: auto; line-height: 10px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+
+            {% for item in basket_items %}
+            <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 25px; hyphens: auto; line-height: 25px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td valign="middle" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; width: 105px; word-wrap: break-word" align="left">
+                        <img src="{{ item.image_src }}" alt="{{ item.name }}" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto">
+                    </td>
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-left: 20px; text-align: left; vertical-align: top; word-wrap: break-word">
+                        <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                            <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                                <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                                    <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">{{ item.name }}</p>
+                                </td>
+                            </tr>
+                            <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                                <td height="5px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 5px; hyphens: auto; line-height: 5px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td>
+                            </tr>
+
+                            <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                                <td height="20px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 20px; hyphens: auto; line-height: 20px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td>
+                            </tr>
+                            <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                                <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                                    <p class="font-small font-faded" style="Margin: 0 0 0 0; color: #7f8489 !important; font-size: 13px !important; margin: 0 0 0 0; text-decoration: none !important">
+                                        {% trans 'Qty' %}: {{ item.quantity }}&nbsp;|&nbsp;{{ item.price_taxed|format_currency:locale_code }}
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 25px; hyphens: auto; line-height: 25px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td>
+                </tr>
+            </table>
+            {% endfor %}
+
+            <table cellspacing="0" cellpadding="0" width="100%" class="spacer" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 25px; hyphens: auto; line-height: 25px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td align="left" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: left; vertical-align: top; word-wrap: break-word">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Subtotal' %}</p>
+                    </td>
+                    <td align="right" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: right; vertical-align: top; word-wrap: break-word">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{{ totals.items_taxed|format_currency:locale_code }}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td align="left" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: left; vertical-align: top; word-wrap: break-word">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Standard Delivery' %}</p>
+                    </td>
+                    <td align="right" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: right; vertical-align: top; word-wrap: break-word">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{{ totals.delivery_taxed|format_currency:locale_code }}</p>
+                    </td>
+                </tr>
+            </table>
+
+
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th align="left" style="text-align: left; padding-top: 20px; padding-bottom: 20px">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Total' %}</p>
+                    </th>
+                    <th align="right" style="text-align: right; padding-top: 20px; padding-bottom: 20px">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{{ totals.total_taxed|format_currency:locale_code }}</p>
+                    </th>
+                </tr>
+            </table>
+
+
+
+
+
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="45px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 45px; hyphens: auto; line-height: 45px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th align="left" style="text-align: left; padding-top: 8px; padding-bottom: 8px">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Delivery Address' %}</p>
+                    </th>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{{ delivery_address.to_html }}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" class="spacer" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="30px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 30px; hyphens: auto; line-height: 30px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <th align="left" style="text-align: left; padding-top: 8px; padding-bottom: 8px">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Payment Method' %}</p>
+                    </th>
+                </tr>
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{{ payment_details.to_html }}</p>
+                    </td>
+                </tr>
+            </table>
+
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="90px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 90px; hyphens: auto; line-height: 90px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word" align="left">
+                        <p class="font-base" style="Margin: 0 0 0 0; font-size: 16px !important; margin: 0 0 0 0; text-decoration: none !important">
+                            {% blocktrans %}
+                            We are currently processing your order. You can make any changes to it within 2 hours, after which it the order will be placed at the selected retailer.
+                            {% endblocktrans %}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 25px; hyphens: auto; line-height: 25px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <a href="#" class="link" style="color: #ffffff !important; font-size: 16px !important; text-decoration: none !important">
+                <table cellspacing="0" cellpadding="0" width="100%" class="button" style="background-color: #3881bf !important; border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; padding-bottom: 12px !important; padding-top: 12px !important; text-align: center !important; vertical-align: top; width: 100% !important">
+                    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                        <td align="center" width="100%" class="button link" style="-moz-hyphens: auto; -webkit-hyphens: auto; background-color: #3881bf !important; border-collapse: collapse !important; color: #ffffff !important; font-size: 16px !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 12px !important; padding-top: 12px !important; text-align: center !important; vertical-align: top; width: 100% !important; word-wrap: break-word">
+                            <a href="#" class="link" style="color: #ffffff !important; font-size: 16px !important; text-decoration: none !important">
+                                {% trans 'Edit Order' %}
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </a>
+
+            <table class="spacer" cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top"><td height="60px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; font-size: 60px; hyphens: auto; line-height: 60px; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&nbsp;</td></tr>
+            </table>
+
+            <a href="#" style="color: #3a4752; font-size: 14px; line-height: 14px; text-decoration: none !important">
+                <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                        <td align="left" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: left; vertical-align: top; word-wrap: break-word">
+                            <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'View Order Details' %}</p>
+                        </td>
+                        <td align="right" valign="middle" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; color: #3a4752; hyphens: auto; line-height: 26px; padding: 0; text-align: right; vertical-align: middle; word-wrap: break-word">&gt;</td>
+                    </tr>
+                </table>
+            </a>
+            <a href="#" style="color: #3a4752; line-height: 14px; text-decoration: none !important">
+                <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; border-spacing: 0; line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                    <tr style="line-height: 26px; padding: 0; text-align: left; vertical-align: top">
+                        <td align="left" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; hyphens: auto; line-height: 26px; padding: 0; padding-bottom: 20px; padding-top: 20px; text-align: left; vertical-align: top; word-wrap: break-word">
+                            <p class="font-medium" style="Margin: 0 0 0 0; font-size: 14px !important; margin: 0 0 0 0; text-decoration: none !important">{% trans 'Returns & Cancellations' %}</p>
+                        </td>
+                        <td align="right" valign="middle" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; color: #3a4752; hyphens: auto; line-height: 26px; padding: 0; text-align: right; vertical-align: middle; word-wrap: break-word">&gt;</td>
+                    </tr>
+                </table>
+            </a>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
